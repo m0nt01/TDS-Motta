@@ -1,0 +1,237 @@
+\documentclass[12pt,a4paper,chapter=TITLE,section=TITLE,subsection=TITLE,subsubsection=TITLE]{article}
+\usepackage{sbc-template}
+\usepackage{times}			% Usa a fonte Times new Roman
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+		
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% ---
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		%Citado #1 vezes nas páginas #2.%
+        Citado nas páginas #2.%
+	\fi}%
+
+\title{Projeto CosCon\\ TDS }
+
+\author{Guilherme Souza Malieni\inst{1} }
+
+
+\address{Curso de Informática -- Instituto Federal de São Paulo
+  (IFSP)\\
+  \email{gui.souza.malieni@gmail.com}
+}
+
+
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Modelo de artigo científico com abnTeX2},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+		}
+\makeatother
+% --- 
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Altera as margens padrões
+% ---
+\setlrmarginsandblock{3cm}{3cm}{*} %{ESQUERDA}{DIREITA}
+\setulmarginsandblock{3.5cm}{2.5cm}{*} %{SUPERIOR}{INFERIOR}
+\checkandfixthelayout
+% ---
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por (está definido dentro do sbc-template.sty):
+%\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro (está definido dentro do sbc-template.sty):
+%\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+\SingleSpacing
+
+
+\begin{document}
+  
+  % Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage {brazil}
+
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+%---
+%
+% Se desejar escrever o artigo em duas colunas, descomente a linha abaixo
+% e a linha com o texto ``FIM DE ARTIGO EM DUAS COLUNAS''.
+% \twocolumn[    		% INICIO DE ARTIGO EM DUAS COLUNAS
+%
+%---
+
+% página de titulo principal (obrigatório)
+\maketitle
+Projeto CosCon-
+Project CosCon
+
+\begin{abstract}
+  This meta-paper describes the style to be used in articles and short papers
+  for SBC conferences. For papers in English, you should add just an abstract
+  while for the papers in Portuguese, we also ask for an abstract in
+  Portuguese (``resumo''). In both cases, abstracts should not have more than
+  10 lines and must be in the first page of the paper.
+\end{abstract}
+     
+\begin{resumo1} 
+  Este meta-artigo descreve o estilo a ser usado na confecção de artigos e
+  resumos de artigos para publicação nos anais das conferências organizadas
+  pela SBC. É solicitada a escrita de resumo e abstract apenas para os artigos
+  escritos em português. Artigos em inglês deverão apresentar apenas abstract.
+  Nos dois casos, o autor deve tomar cuidado para que o resumo (e o abstract)
+  não ultrapassem 10 linhas cada, sendo que ambos devem estar na primeira
+  página do artigo.
+\end{resumo1}
+
+
+
+% ]  				% FIM DE ARTIGO EM DUAS COLUNAS
+% ---
+
+%\begin{center}\smaller
+%\textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+
+%\textbf{Identificação e disponibilidade}: elemento opcional. Pode ser indicado o endereço eletrônico, DOI, suportes e outras informações relativas ao acesso.
+%\end{center}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\section{Introdução}
+O objetivo deste documento é expor as regras e formatos para o desenvolvimento dos documentos das disciplinas de TDS e PDS. Este utiliza como base tanto o modelo da SBC\footnote{\url{https://www.overleaf.com/latex/templates/sbc-conferences-template/blbxwjwzdngr}} quanto o fornecido pela abnTeX\footnote{\url{http://www.latex-project.org/lppl.txt}}.
+
+O documento final deve ter \textbf{entre 12 e 15 páginas}, descontados na contagem apenas os anexos e apêndices. Cada professor é livre para definir junto aos alunos o que deve estar em cada uma das duas seções supracitadas.
+
+As seções aqui colocadas são apenas EXEMPLOS do que deve estar contido, podendo ser alteradas em conjunto entre orientadores e alunos, assim como as devidas explicações dentro delas.
+
+Atenção especial para a quantidade de texto colocada em cada uma das seções. De forma geral, não faz muito sentido colocar uma seção para escrever apenas um parágrafo ou 6, 7 linhas.
+
+Para dicas e como fazer tabelas, listas, figuras, citações e etc, bem como evitar erros em projetos e no próprio documento, consultar (entre outros) os capítulos 6, 7, 8 e 9 do documento: \url{https://www.overleaf.com/project/58a3a66af9bb74023ba1bd56}.
+
+
+Ao preparar a Introdução é importante estar atento a:
+    \begin{citacao}
+    "A introdução é a parte responsável pela apresentação do trabalho, desde a delimitação do tema até a forma como está organizado. Sugere-se que seja feita a introdução do assunto, de modo a: discorrer sobre o tema do trabalho; apresentação do problema e objetivos da pesquisa; exposição da justificativa; finalmente, informar em quantos capítulos o texto foi dividido e apresentar os principais elementos que os compõem . Por apresentar estes elementos, a introdução requer uma revisão detalhada ao final do trabalho para manter a coesão textual."  \cite{NormalizacaoIFSP}.
+    \end{citacao}
+
+\subsection{Objetivos}
+
+Os objetivos precisam seguir uma linha de raciocínio ao serem traçados.
+    \begin{citacao}
+    "O objetivo normalmente comporta uma hipótese de trabalho. Um bom objetivo de pesquisa normalmente terá
+    a forma “demonstrar que a hipótese x é verdadeira”.
+    Nem todo objetivo pode ser considerado um bom objetivo de pesquisa. Por exemplo, algo do tipo “o objetivo
+    deste trabalho é aumentar os meus conhecimentos na área de estudo” pode até ser muito sincero, mas não
+    convence ninguém de que algum conhecimento novo para a humanidade será produzido. Portanto, isso deve ser evitado.
+    Outro objetivo algumas vezes encontrado é a forma “propor…”. Alguma coisa é proposta, normalmente um
+    método, uma abordagem, uma técnica, um algoritmo, uma comparação, ou qualquer outra coisa. A questão é:
+    se o autor fizer a proposta, então o objetivo estará atingido? Se o aluno se propõe a propor e propôs, então está
+    proposto! O que for proposto não é necessariamente melhor ou diferente daquilo que já existia antes. Então, o
+    estágio da pesquisa neste caso ainda é dos mais ingênuos.
+    É necessário que o objetivo diga que aquilo que está sendo proposto é melhor do que alguma outra coisa ou
+    que resolve algum problema que antes não podia ser resolvido."  \cite{PESQUISA:RAUL}.
+    \end{citacao}
+
+Os objetivos PODEM ser divididos em: Principal e Específicos (ou Secundários).
+
+Em relação ao objetivo principal:
+
+    \begin{citacao}
+    "Atenção especial é dada ao verbo que apresenta o objetivo.
+    Analisa-se também se o objetivo apresentado define claramente uma pesquisa científica ou um objetivo
+    tecnológico, como, por exemplo, a implementação de um sistema."
+    \lipsum[5] \cite{PESQUISA:RAUL}.
+    \end{citacao}
+
+Em relação aos objetivos específicos (ou Secundários):
+
+    \begin{citacao}
+    "Os objetivos específicos devem refletir subprodutos ou um detalhamento do objetivo principal. N ão se deve, a
+    princípio, mencionar como objetivo específico passos que são meramente intermediários para atingir o objetivo
+    geral."
+    \lipsum[5] \cite{PESQUISA:RAUL}.
+    \end{citacao}
+
+
+\subsection{Justificativa}    
+
+    O trabalho precisa possuir uma justificativa:
+    \begin{citacao}
+    "A justificativa deve se referir principalmente à hipótese de trabalho, ou seja, deve-se justificar a escolha de uma
+    hipótese em vez de tentar justificar apenas a importância do tema da pesquisa. Usualmente a importância do
+    tema da pesquisa já foi abordada na contextualização do problema. Então não há necessidade de repetir essa
+    justificativa."
+    \lipsum[5] \cite{PESQUISA:RAUL}.
+    \end{citacao}
+
+\end{document}
