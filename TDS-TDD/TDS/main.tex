@@ -1,0 +1,190 @@
+\documentclass[12pt,a4paper,chapter=TITLE,section=TITLE,subsection=TITLE,subsubsection=TITLE]{article}
+\usepackage{sbc-template}
+\usepackage{times}			% Usa a fonte Times new Roman
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 
+% Pacotes adicionais, usados apenas no âmbito do Modelo Canônico do abnteX2
+% ---
+\usepackage{lipsum}				% para geração de dummy text
+% ---
+		
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+% ---
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		%Citado #1 vezes nas páginas #2.%
+        Citado nas páginas #2.%
+	\fi}%
+
+\title{Projeto CosplayConnection\\ TDS }
+
+\author{Guilherme Souza Malieni\inst{1} }
+
+
+\address{Curso de Informática -- Instituto Federal de São Paulo
+  (IFSP)\\
+  \email{gui.souza.malieni@gmail.com}
+}
+
+
+% ---
+
+% ---
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={Modelo de artigo científico com abnTeX2},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{atigo científico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+		}
+\makeatother
+% --- 
+
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+
+% ---
+% Altera as margens padrões
+% ---
+\setlrmarginsandblock{3cm}{3cm}{*} %{ESQUERDA}{DIREITA}
+\setulmarginsandblock{3.5cm}{2.5cm}{*} %{SUPERIOR}{INFERIOR}
+\checkandfixthelayout
+% ---
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por (está definido dentro do sbc-template.sty):
+%\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro (está definido dentro do sbc-template.sty):
+%\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+\SingleSpacing
+
+
+\begin{document}
+  
+  % Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage {brazil}
+
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+%---
+%
+% Se desejar escrever o artigo em duas colunas, descomente a linha abaixo
+% e a linha com o texto ``FIM DE ARTIGO EM DUAS COLUNAS''.
+% \twocolumn[    		% INICIO DE ARTIGO EM DUAS COLUNAS
+%
+%---
+
+% página de titulo principal (obrigatório)
+\maketitle
+Projeto CosCon-
+Project CosCon
+
+\begin{abstract}
+  CosplayConnection (COSCOn) is a social networking platform designed specifically for cosplay enthusiasts and practitioners. With a focus on connecting cosplayers worldwide, COSCOn provides a dedicated space for sharing experiences, showcasing works, and accessing valuable cosplay-related resources. Through features such as user profiles, activity feeds, groups and communities, learning resources, event calendars, and a cosplay store, COSCOn aims to foster an inclusive and supportive environment for cosplayers of all skill levels. This project documentation outlines the objectives, key features, technologies, design considerations, monetization strategies, and the vision of COSCOn as the ultimate online destination for the cosplay community.
+\end{abstract}
+     
+\begin{resumo1} 
+  CosplayConnection (COSCOn) é uma plataforma de rede social projetada especificamente para entusiastas e praticantes de cosplay. Com foco em conectar cosplayers em todo o mundo, o COSCOn oferece um espaço dedicado para compartilhar experiências, exibir trabalhos e acessar recursos valiosos relacionados ao cosplay. Através de recursos como perfis de usuários, feeds de atividades, grupos e comunidades, recursos de aprendizado, calendários de eventos e uma loja de cosplay, o COSCOn tem como objetivo promover um ambiente inclusivo e solidário para cosplayers de todos os níveis de habilidade. Esta documentação do projeto detalha os objetivos, principais características, tecnologias, considerações de design, estratégias de monetização e a visão do COSCOn como o destino online definitivo para a comunidade cosplay.
+\end{resumo1}
+
+
+
+% ]  				% FIM DE ARTIGO EM DUAS COLUNAS
+% ---
+
+%\begin{center}\smaller
+%\textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+
+%\textbf{Identificação e disponibilidade}: elemento opcional. Pode ser indicado o endereço eletrônico, DOI, suportes e outras informações relativas ao acesso.
+%\end{center}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Introdução
+% ----------------------------------------------------------
+\section{Introdução}
+O CosplayConnection (COSCOn) é uma plataforma de rede social voltada para entusiastas e praticantes de cosplay. A plataforma visa fornecer um espaço dedicado para a comunidade cosplay se conectar, compartilhar experiências, mostrar seus trabalhos, e encontrar recursos úteis para a prática do cosplay.
+
+O que buscamos proporcionar ao cliente:
+    \begin{citacao}
+   Buscamos um local dedicado à comunidade de cosplay conectar experiências, exibir seus trabalhos criativos e encontrar recursos valiosos para aprimorar suas habilidades e conhecimentos do cosplay.
+    \end{citacao}
+
+\subsection{Objetivos}
+
+-Criar uma comunidade online dedicada ao cosplay.
+
+-Facilitar a conexão entre cosplayers de todo o mundo.
+
+-Permitir o compartilhamento de fotos, vídeos, tutoriais e dicas relacionadas ao cosplay.
+
+-Oferecer recursos úteis, como tutoriais, guias de fabricação de trajes, 		recomendações de eventos e lojas.
+
+-Promover um ambiente inclusivo e amigável para cosplayers de todos os níveis de habilidade.
+
+\subsection{Justificativa}    
+
+A iniciativa do projeto CosplayConnection (COSCOn) surge da observação da crescente popularidade e diversidade da comunidade cosplay em todo o mundo. O cosplay não é apenas uma forma de entretenimento, mas também uma expressão artística que une pessoas de diferentes origens e culturas em torno de interesses comuns. No entanto, apesar do seu enorme alcance e impacto cultural, os cosplayers muitas vezes enfrentam desafios ao encontrar espaços dedicados para se conectar, compartilhar conhecimentos e receber apoio.
+
+Portanto, a criação do COSCOn visa preencher essa lacuna, oferecendo uma plataforma digital que não só permite aos cosplayers se reunirem virtualmente, mas também proporciona recursos úteis, inspiração e oportunidades de aprendizado. Através do COSCOn, os cosplayers podem não apenas mostrar seus talentos e conquistas, mas também aprender uns com os outros, encontrar orientações sobre técnicas de cosplay, descobrir eventos relevantes e até mesmo obter acesso a produtos e serviços especializados.
+
+Além disso, o COSCOn busca promover uma comunidade inclusiva e acolhedora, onde cosplayers de todas as idades, origens e níveis de habilidade se sintam valorizados e respeitados. Ao fornecer um espaço seguro e colaborativo, o COSCOn aspira a fortalecer os laços dentro da comunidade cosplay, inspirar a criatividade e ajudar os cosplayers a alcançarem seus objetivos pessoais e profissionais no mundo do cosplay.
+
+Em resumo, a iniciativa do projeto COSCOn é motivada pela necessidade de um ambiente online dedicado ao cosplay, que não só celebre a paixão e a criatividade dos cosplayers, mas também os capacite através do compartilhamento de conhecimento, conexões significativas e recursos úteis.
+
+\end{document}
